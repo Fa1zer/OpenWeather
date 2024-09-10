@@ -12,6 +12,7 @@
 		E30F880D2C90DB8700631301 /* OpenWeather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E30F880B2C90DB8700631301 /* OpenWeather.xcdatamodeld */; };
 		E30F880F2C90DB8800631301 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E30F880E2C90DB8800631301 /* Assets.xcassets */; };
 		E30F88122C90DB8800631301 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E30F88112C90DB8800631301 /* Base */; };
+		E30F881E2C90E10900631301 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E30F881D2C90E10900631301 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E30F881E2C90E10900631301 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +106,9 @@
 			dependencies = (
 			);
 			name = OpenWeather;
+			packageProductDependencies = (
+				E30F881D2C90E10900631301 /* SnapKit */,
+			);
 			productName = OpenWeather;
 			productReference = E30F87FF2C90DB8700631301 /* OpenWeather.app */;
 			productType = "com.apple.product-type.application";
@@ -132,6 +137,9 @@
 				Base,
 			);
 			mainGroup = E30F87F62C90DB8700631301;
+			packageReferences = (
+				E30F881C2C90E10900631301 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = E30F88002C90DB8700631301 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -377,6 +385,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E30F881C2C90E10900631301 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E30F881D2C90E10900631301 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E30F881C2C90E10900631301 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		E30F880B2C90DB8700631301 /* OpenWeather.xcdatamodeld */ = {

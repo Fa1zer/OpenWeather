@@ -41,7 +41,7 @@ final class RequestManager {
                     print("❌ Error: status code is equal to \(httpURLResponse.statusCode)")
                     
                     DispatchQueue.main.async {
-                        completionHandler(nil, RequestErrors.statusCodeError(statusCode: httpURLResponse.statusCode))
+                        completionHandler(nil, RequestError.statusCodeError(statusCode: httpURLResponse.statusCode))
                     }
                     
                     return
@@ -51,7 +51,7 @@ final class RequestManager {
                     print("❌ Error: data is equal to nil.")
                     
                     DispatchQueue.main.async {
-                        completionHandler(nil, RequestErrors.dataIsEqualToNil)
+                        completionHandler(nil, RequestError.dataIsEqualToNil)
                     }
                     
                     return
@@ -61,7 +61,7 @@ final class RequestManager {
                     print("❌ Error: decoding failed.")
                     
                     DispatchQueue.main.async {
-                        completionHandler(nil, RequestErrors.decodingFailed)
+                        completionHandler(nil, RequestError.decodingFailed)
                     }
                     
                     return
@@ -74,7 +74,7 @@ final class RequestManager {
                 print("❌ Error: response is equal to nil.")
                 
                 DispatchQueue.main.async {
-                    completionHandler(nil, RequestErrors.responseIsEqualToNil)
+                    completionHandler(nil, RequestError.responseIsEqualToNil)
                 }
                 
                 return
@@ -120,7 +120,7 @@ final class RequestManager {
                         print("❌ Error: status code is equal to \(httpURLResponse.statusCode)")
                         
                         DispatchQueue.main.async {
-                            completionHandler(nil, RequestErrors.statusCodeError(statusCode:httpURLResponse.statusCode))
+                            completionHandler(nil, RequestError.statusCodeError(statusCode:httpURLResponse.statusCode))
                         }
                         
                         return
@@ -130,7 +130,7 @@ final class RequestManager {
                         print("❌ Error: data is equal to nil.")
                         
                         DispatchQueue.main.async {
-                            completionHandler(nil, RequestErrors.dataIsEqualToNil)
+                            completionHandler(nil, RequestError.dataIsEqualToNil)
                         }
                         
                         return
@@ -140,7 +140,7 @@ final class RequestManager {
                         print("❌ Error: decoding failed.")
                         
                         DispatchQueue.main.async {
-                            completionHandler(nil, RequestErrors.decodingFailed)
+                            completionHandler(nil, RequestError.decodingFailed)
                         }
                         
                         return
@@ -153,7 +153,7 @@ final class RequestManager {
                     print("❌ Error: response is equal to nil.")
                     
                     DispatchQueue.main.async {
-                        completionHandler(nil, RequestErrors.responseIsEqualToNil)
+                        completionHandler(nil, RequestError.responseIsEqualToNil)
                     }
                     
                     return
@@ -163,7 +163,7 @@ final class RequestManager {
         } else {
             print("❌ Error: encoding failed.")
             
-            completionHandler(nil, RequestErrors.encodingFailed)
+            completionHandler(nil, RequestError.encodingFailed)
             
             return
         }
@@ -206,7 +206,7 @@ final class RequestManager {
                         print("❌ Error: status code is equal to \(httpURLResponse.statusCode)")
                         
                         DispatchQueue.main.async {
-                            completionHandler(RequestErrors.statusCodeError(statusCode:
+                            completionHandler(RequestError.statusCodeError(statusCode:
                                                                                 httpURLResponse.statusCode))
                         }
                         return
@@ -220,7 +220,7 @@ final class RequestManager {
                     print("❌ Error: response is equal to nil.")
                     
                     DispatchQueue.main.async {
-                        completionHandler(RequestErrors.responseIsEqualToNil)
+                        completionHandler(RequestError.responseIsEqualToNil)
                     }
                     
                     return
@@ -230,7 +230,7 @@ final class RequestManager {
         } else {
             print("❌ Error: encoding failed.")
             
-            completionHandler(RequestErrors.encodingFailed)
+            completionHandler(RequestError.encodingFailed)
             
             return
         }
@@ -268,7 +268,7 @@ final class RequestManager {
                     print("❌ Error: status code is equal to \(httpURLResponse.statusCode)")
                     
                     DispatchQueue.main.async {
-                        completionHandler(RequestErrors.statusCodeError(statusCode: httpURLResponse.statusCode))
+                        completionHandler(RequestError.statusCodeError(statusCode: httpURLResponse.statusCode))
                     }
                     
                     return
@@ -281,7 +281,7 @@ final class RequestManager {
             } else {
                 print("❌ Error: response is equal to nil.")
                 
-                completionHandler(RequestErrors.responseIsEqualToNil)
+                completionHandler(RequestError.responseIsEqualToNil)
                 
                 return
             }

@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum RequestErrors: Error {
+enum RequestError: Error {
     case decodingFailed, encodingFailed, dataIsEqualToNil, statusCodeError(statusCode: Int), responseIsEqualToNil
 }

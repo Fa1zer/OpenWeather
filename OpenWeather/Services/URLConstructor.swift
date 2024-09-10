@@ -21,15 +21,13 @@ final class URLConstructor: URLCreator {
         self.baseURL = baseURL
     }
     
-    init?(scheme: URLSchemes, host: URLHosts) {
+    init(scheme: URLSchemes, host: URLHosts) {
         var urlComponents = URLComponents()
         
         urlComponents.host = host.rawValue
         urlComponents.scheme = scheme.rawValue
         
-        guard let url = urlComponents.url else { return nil }
-        
-        self.baseURL = url
+        self.baseURL = urlComponents.url ?? .init(fileURLWithPath: .init())
     }
     
     func url(paths: URLPath...) -> URL {
@@ -40,6 +38,27 @@ final class URLConstructor: URLCreator {
         }
         
         return url
+    }
+    
+}
+
+//MARK: - URL Weather Contructor
+final class URLWeatherContructor {
+    
+    private let custructor: URLConstructor
+    
+    init(custructor: URLConstructor) {
+        self.custructor = custructor
+    }
+    
+    static let shared = URLWeatherContructor(custructor: .init(scheme: .https, host: .base))
+    
+    func weather() -> URL {
+        self.custructor.url(paths: .data, .version, .weather)
+    }
+    
+    func onecall() -> URL {
+        self.custructor.url(paths: .data, .version, .onecall)
     }
     
 }

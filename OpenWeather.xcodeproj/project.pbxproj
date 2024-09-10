@@ -18,6 +18,12 @@
 		E30F88252C90E41800631301 /* RequestHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F88242C90E41800631301 /* RequestHeader.swift */; };
 		E30F88282C90E48800631301 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F88272C90E48800631301 /* RequestError.swift */; };
 		E30F882B2C90E4B100631301 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F882A2C90E4B100631301 /* RequestManager.swift */; };
+		E30F882F2C90E85600631301 /* URLSchemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F882E2C90E85600631301 /* URLSchemes.swift */; };
+		E30F88312C90E87200631301 /* URLHosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F88302C90E87200631301 /* URLHosts.swift */; };
+		E30F88332C90EA0600631301 /* URLPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F88322C90EA0600631301 /* URLPath.swift */; };
+		E30F88352C90EB2300631301 /* URLConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F88342C90EB2300631301 /* URLConstructor.swift */; };
+		E30F88382C90EB4300631301 /* OpenWeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F88372C90EB4300631301 /* OpenWeatherAPI.swift */; };
+		E30F883B2C90ECDA00631301 /* URLError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F883A2C90ECDA00631301 /* URLError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +39,12 @@
 		E30F88242C90E41800631301 /* RequestHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHeader.swift; sourceTree = "<group>"; };
 		E30F88272C90E48800631301 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		E30F882A2C90E4B100631301 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		E30F882E2C90E85600631301 /* URLSchemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSchemes.swift; sourceTree = "<group>"; };
+		E30F88302C90E87200631301 /* URLHosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLHosts.swift; sourceTree = "<group>"; };
+		E30F88322C90EA0600631301 /* URLPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLPath.swift; sourceTree = "<group>"; };
+		E30F88342C90EB2300631301 /* URLConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstructor.swift; sourceTree = "<group>"; };
+		E30F88372C90EB4300631301 /* OpenWeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherAPI.swift; sourceTree = "<group>"; };
+		E30F883A2C90ECDA00631301 /* URLError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +80,7 @@
 			children = (
 				E30F88292C90E49100631301 /* Services */,
 				E30F881F2C90E15D00631301 /* Enums */,
-				E30F881B2C90DE9800631301 /* CoreData */,
+				E30F881B2C90DE9800631301 /* Core Data */,
 				E30F881A2C90DE8C00631301 /* Sources */,
 				E30F88192C90DE6C00631301 /* Supporting Files */,
 			);
@@ -89,22 +101,25 @@
 		E30F881A2C90DE8C00631301 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				E30F88362C90EB3700631301 /* API */,
 				E30F880E2C90DB8800631301 /* Assets.xcassets */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		E30F881B2C90DE9800631301 /* CoreData */ = {
+		E30F881B2C90DE9800631301 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
 				E30F880B2C90DB8700631301 /* OpenWeather.xcdatamodeld */,
 			);
-			path = CoreData;
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 		E30F881F2C90E15D00631301 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				E30F88392C90ECC700631301 /* Errors */,
+				E30F882D2C90E7D000631301 /* URL Parts */,
 				E30F882C2C90E73800631301 /* Request */,
 			);
 			path = Enums;
@@ -114,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				E30F882A2C90E4B100631301 /* RequestManager.swift */,
+				E30F88342C90EB2300631301 /* URLConstructor.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -124,9 +140,35 @@
 				E30F88202C90E26300631301 /* RequestMethod.swift */,
 				E30F88222C90E2B700631301 /* RequestAuthHeader.swift */,
 				E30F88242C90E41800631301 /* RequestHeader.swift */,
-				E30F88272C90E48800631301 /* RequestError.swift */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		E30F882D2C90E7D000631301 /* URL Parts */ = {
+			isa = PBXGroup;
+			children = (
+				E30F882E2C90E85600631301 /* URLSchemes.swift */,
+				E30F88302C90E87200631301 /* URLHosts.swift */,
+				E30F88322C90EA0600631301 /* URLPath.swift */,
+			);
+			path = "URL Parts";
+			sourceTree = "<group>";
+		};
+		E30F88362C90EB3700631301 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E30F88372C90EB4300631301 /* OpenWeatherAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		E30F88392C90ECC700631301 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				E30F88272C90E48800631301 /* RequestError.swift */,
+				E30F883A2C90ECDA00631301 /* URLError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,9 +247,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E30F88352C90EB2300631301 /* URLConstructor.swift in Sources */,
+				E30F88382C90EB4300631301 /* OpenWeatherAPI.swift in Sources */,
+				E30F88332C90EA0600631301 /* URLPath.swift in Sources */,
+				E30F882F2C90E85600631301 /* URLSchemes.swift in Sources */,
+				E30F88312C90E87200631301 /* URLHosts.swift in Sources */,
 				E30F88282C90E48800631301 /* RequestError.swift in Sources */,
 				E30F88212C90E26300631301 /* RequestMethod.swift in Sources */,
 				E30F88032C90DB8700631301 /* AppDelegate.swift in Sources */,
+				E30F883B2C90ECDA00631301 /* URLError.swift in Sources */,
 				E30F882B2C90E4B100631301 /* RequestManager.swift in Sources */,
 				E30F88232C90E2B700631301 /* RequestAuthHeader.swift in Sources */,
 				E30F880D2C90DB8700631301 /* OpenWeather.xcdatamodeld in Sources */,

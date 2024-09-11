@@ -1,4 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23G93" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CurrentWeatherEntity" representedClassName="CurrentWeatherEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="cloud" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="humidity" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isDay" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="temp" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="DaysWeatherEntity" representedClassName="DaysWeatherEntity" syncable="YES" codeGenerationType="class">
+        <relationship name="forecastday" toMany="YES" deletionRule="No Action" destinationEntity="ForecastDayWeatherEntity"/>
+        <relationship name="location" maxCount="1" deletionRule="No Action" destinationEntity="LocationWeatherEntity"/>
+    </entity>
+    <entity name="DayWeatherEntity" representedClassName="DayWeatherEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="dailyWillItRain" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="dailyWillItSnow" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="maxTemp" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="minTemp" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="ForecastDayWeatherEntity" representedClassName="ForecastDayWeatherEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <relationship name="day" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="DayWeatherEntity"/>
+    </entity>
+    <entity name="LocationWeatherEntity" representedClassName="LocationWeatherEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="localtime" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+    </entity>
+    <entity name="MainWeatherEntity" representedClassName="MainWeatherEntity" syncable="YES" codeGenerationType="class">
+        <relationship name="current" maxCount="1" deletionRule="No Action" destinationEntity="CurrentWeatherEntity"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="LocationWeatherEntity"/>
+    </entity>
 </model>

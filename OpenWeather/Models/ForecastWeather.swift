@@ -12,6 +12,7 @@ struct ForecastWeather: Decodable {
     
     struct ForecastDayWeather: Decodable {
         var date: String
+        var day: DayWeather
         
         struct DayWeather: Decodable {
             var maxTemp: Double

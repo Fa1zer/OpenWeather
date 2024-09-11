@@ -29,7 +29,7 @@ final class NavigationCoordinator {
     
 //    MARK: - Start
     func start() -> UINavigationController {
-        
+        self.goToLoader()
         
         return self.navigationController
     }
@@ -41,6 +41,25 @@ final class NavigationCoordinator {
         viewModel.coordinator = self
         
         return .init(viewModel: viewModel)
+    }
+    
+//    MARK: - Three Days
+    func getThreeDyas(with data: DaysWeatherEntity) -> ThreeDaysViewController {
+        let viewModel = ThreeDaysViewModel(model: .init(), data: data)
+        
+        viewModel.coordinator = self
+        
+        return .init(viewModel: viewModel)
+    }
+    
+//    MARK: - City Editor
+    func goToCityEditor() {
+        self.navigationController.pushViewController(CityEditorViewController(viewModel: .init(model: .init())), animated: true)
+    }
+    
+//    MARK: - Loader
+    func goToLoader() {
+        self.navigationController.pushViewController(LoaderViewController(viewModel: .init(model: .init())), animated: true)
     }
     
 }

@@ -17,7 +17,7 @@ final class CityEditorViewModel: NavigationCoordinatorDelegate {
     }
     
 //    MARK: - Properties
-    private(set) var city: String?
+    var city: String?
     var coordinator: NavigationCoordinator?
     
 //    MARK: - User Defaults
@@ -29,6 +29,11 @@ final class CityEditorViewModel: NavigationCoordinatorDelegate {
         guard let city else { return }
         
         self.model.setUserDefaults(city, for: .city)
+    }
+    
+//    MARK: - Routing
+    func goToLoader() {
+        self.coordinator?.goToLoader()
     }
     
 }

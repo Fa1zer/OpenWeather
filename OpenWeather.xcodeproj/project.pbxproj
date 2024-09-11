@@ -48,6 +48,9 @@
 		E37A722F2C91E55F00D6BAD0 /* CityEditorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A722E2C91E55F00D6BAD0 /* CityEditorModel.swift */; };
 		E37A72312C91E56A00D6BAD0 /* CityEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A72302C91E56A00D6BAD0 /* CityEditorViewModel.swift */; };
 		E37A72332C91E58C00D6BAD0 /* CityEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A72322C91E58C00D6BAD0 /* CityEditorViewController.swift */; };
+		E37A72362C91EF3400D6BAD0 /* LoaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A72352C91EF3400D6BAD0 /* LoaderModel.swift */; };
+		E37A72382C91EF3C00D6BAD0 /* LoaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A72372C91EF3C00D6BAD0 /* LoaderViewModel.swift */; };
+		E37A723A2C91EF4200D6BAD0 /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A72392C91EF4200D6BAD0 /* LoaderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +96,9 @@
 		E37A722E2C91E55F00D6BAD0 /* CityEditorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityEditorModel.swift; sourceTree = "<group>"; };
 		E37A72302C91E56A00D6BAD0 /* CityEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityEditorViewModel.swift; sourceTree = "<group>"; };
 		E37A72322C91E58C00D6BAD0 /* CityEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityEditorViewController.swift; sourceTree = "<group>"; };
+		E37A72352C91EF3400D6BAD0 /* LoaderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderModel.swift; sourceTree = "<group>"; };
+		E37A72372C91EF3C00D6BAD0 /* LoaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewModel.swift; sourceTree = "<group>"; };
+		E37A72392C91EF4200D6BAD0 /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +268,7 @@
 		E30F886D2C91B7F100631301 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E37A72342C91EF2000D6BAD0 /* Loader */,
 				E37A722D2C91E4AE00D6BAD0 /* CityEditor */,
 				E30F88782C91D7F800631301 /* ThreeDays */,
 				E30F88772C91D7EE00631301 /* Main */,
@@ -305,6 +312,16 @@
 				E37A72322C91E58C00D6BAD0 /* CityEditorViewController.swift */,
 			);
 			path = CityEditor;
+			sourceTree = "<group>";
+		};
+		E37A72342C91EF2000D6BAD0 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				E37A72352C91EF3400D6BAD0 /* LoaderModel.swift */,
+				E37A72372C91EF3C00D6BAD0 /* LoaderViewModel.swift */,
+				E37A72392C91EF4200D6BAD0 /* LoaderViewController.swift */,
+			);
+			path = Loader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,6 +418,7 @@
 				E30F88212C90E26300631301 /* RequestMethod.swift in Sources */,
 				E30F887E2C91D81D00631301 /* ThreeDaysViewController.swift in Sources */,
 				E30F88032C90DB8700631301 /* AppDelegate.swift in Sources */,
+				E37A723A2C91EF4200D6BAD0 /* LoaderViewController.swift in Sources */,
 				E30F88632C919C8B00631301 /* UserDefaultsKey.swift in Sources */,
 				E30F88732C91B96400631301 /* MainViewController.swift in Sources */,
 				E30F885A2C91964100631301 /* ForecastWeather.swift in Sources */,
@@ -410,11 +428,13 @@
 				E30F882B2C90E4B100631301 /* RequestManager.swift in Sources */,
 				E30F886C2C91B6CB00631301 /* NavigationCoordinator.swift in Sources */,
 				E30F885E2C9198F700631301 /* DaysRequestModel.swift in Sources */,
+				E37A72382C91EF3C00D6BAD0 /* LoaderViewModel.swift in Sources */,
 				E30F88542C91923600631301 /* LocationWeather.swift in Sources */,
 				E30F88762C91CE9700631301 /* DayWetherTableViewCell.swift in Sources */,
 				E30F88692C91B52100631301 /* CoreDataManager.swift in Sources */,
 				E30F88232C90E2B700631301 /* RequestAuthHeader.swift in Sources */,
 				E30F880D2C90DB8700631301 /* OpenWeather.xcdatamodeld in Sources */,
+				E37A72362C91EF3400D6BAD0 /* LoaderModel.swift in Sources */,
 				E30F88672C919EB400631301 /* LocationManager.swift in Sources */,
 				E30F886F2C91B80F00631301 /* MainModel.swift in Sources */,
 				E30F88602C91996400631301 /* MainWeatherRequestModel.swift in Sources */,

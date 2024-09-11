@@ -45,6 +45,9 @@
 		E30F887E2C91D81D00631301 /* ThreeDaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F887D2C91D81D00631301 /* ThreeDaysViewController.swift */; };
 		E37A722B2C91E12D00D6BAD0 /* DaysWeatherEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A72292C91E12D00D6BAD0 /* DaysWeatherEntity+CoreDataClass.swift */; };
 		E37A722C2C91E12D00D6BAD0 /* DaysWeatherEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A722A2C91E12D00D6BAD0 /* DaysWeatherEntity+CoreDataProperties.swift */; };
+		E37A722F2C91E55F00D6BAD0 /* CityEditorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A722E2C91E55F00D6BAD0 /* CityEditorModel.swift */; };
+		E37A72312C91E56A00D6BAD0 /* CityEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A72302C91E56A00D6BAD0 /* CityEditorViewModel.swift */; };
+		E37A72332C91E58C00D6BAD0 /* CityEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A72322C91E58C00D6BAD0 /* CityEditorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +90,9 @@
 		E30F887D2C91D81D00631301 /* ThreeDaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDaysViewController.swift; sourceTree = "<group>"; };
 		E37A72292C91E12D00D6BAD0 /* DaysWeatherEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DaysWeatherEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E37A722A2C91E12D00D6BAD0 /* DaysWeatherEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DaysWeatherEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E37A722E2C91E55F00D6BAD0 /* CityEditorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityEditorModel.swift; sourceTree = "<group>"; };
+		E37A72302C91E56A00D6BAD0 /* CityEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityEditorViewModel.swift; sourceTree = "<group>"; };
+		E37A72322C91E58C00D6BAD0 /* CityEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityEditorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +262,7 @@
 		E30F886D2C91B7F100631301 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E37A722D2C91E4AE00D6BAD0 /* CityEditor */,
 				E30F88782C91D7F800631301 /* ThreeDays */,
 				E30F88772C91D7EE00631301 /* Main */,
 			);
@@ -288,6 +295,16 @@
 				E30F887D2C91D81D00631301 /* ThreeDaysViewController.swift */,
 			);
 			path = ThreeDays;
+			sourceTree = "<group>";
+		};
+		E37A722D2C91E4AE00D6BAD0 /* CityEditor */ = {
+			isa = PBXGroup;
+			children = (
+				E37A722E2C91E55F00D6BAD0 /* CityEditorModel.swift */,
+				E37A72302C91E56A00D6BAD0 /* CityEditorViewModel.swift */,
+				E37A72322C91E58C00D6BAD0 /* CityEditorViewController.swift */,
+			);
+			path = CityEditor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,12 +385,14 @@
 			files = (
 				E37A722B2C91E12D00D6BAD0 /* DaysWeatherEntity+CoreDataClass.swift in Sources */,
 				E37A722C2C91E12D00D6BAD0 /* DaysWeatherEntity+CoreDataProperties.swift in Sources */,
+				E37A72332C91E58C00D6BAD0 /* CityEditorViewController.swift in Sources */,
 				E30F88352C90EB2300631301 /* URLConstructor.swift in Sources */,
 				E30F88382C90EB4300631301 /* WeatherAPI.swift in Sources */,
 				E30F885C2C91988700631301 /* DaysWeather.swift in Sources */,
 				E30F88562C9193B100631301 /* CurrentWeather.swift in Sources */,
 				E30F88332C90EA0600631301 /* URLPath.swift in Sources */,
 				E30F882F2C90E85600631301 /* URLSchemes.swift in Sources */,
+				E37A72312C91E56A00D6BAD0 /* CityEditorViewModel.swift in Sources */,
 				E30F88312C90E87200631301 /* URLHosts.swift in Sources */,
 				E30F88712C91B84500631301 /* MainViewModel.swift in Sources */,
 				E30F887C2C91D81400631301 /* ThreeDaysViewModel.swift in Sources */,
@@ -399,6 +418,7 @@
 				E30F88672C919EB400631301 /* LocationManager.swift in Sources */,
 				E30F886F2C91B80F00631301 /* MainModel.swift in Sources */,
 				E30F88602C91996400631301 /* MainWeatherRequestModel.swift in Sources */,
+				E37A722F2C91E55F00D6BAD0 /* CityEditorModel.swift in Sources */,
 				E30F88252C90E41800631301 /* RequestHeader.swift in Sources */,
 				E30F88052C90DB8700631301 /* SceneDelegate.swift in Sources */,
 			);

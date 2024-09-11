@@ -35,6 +35,19 @@ final class ThreeDaysViewController: UIViewController {
         return view
     }()
     
+//    MARK: - Life Cycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setupNavigationBar()
+        self.setupViews()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.viewModel.getCity()
+        self.title = self.viewModel.city
+    }
+    
 //    MARK: - Setup View
     private func setupViews() {
         self.view.backgroundColor = .white

@@ -28,4 +28,9 @@ final class MainViewModel: NavigationCoordinatorDelegate {
         self.city = self.model.getUserDefaults(for: .city)
     }
     
+//    MARK: - Routing
+    func goToEditCity() {
+        self.coordinator?.goToCityEditor()
+    }
+    
 }

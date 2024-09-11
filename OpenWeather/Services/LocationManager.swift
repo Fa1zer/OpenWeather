@@ -23,7 +23,7 @@ final class LocationManager: NSObject {
     static let shared = LocationManager(manager: CLLocationManager())
     
 //    MARK: - Request Authorization
-    func requestAuthorization(ocationPremitionHandler: @escaping (Bool) -> Void) {
+    func requestAuthorization(locationPremitionHandler: @escaping (Bool) -> Void) {
         self.manager.delegate = self
         self.manager.requestWhenInUseAuthorization()
     }
@@ -48,6 +48,11 @@ final class LocationManager: NSObject {
             
             completionHandler(city)
         }
+    }
+    
+//    MARK: - Is Authorized
+    func isAuthorized() -> Bool {
+        [CLAuthorizationStatus.authorizedAlways, .authorizedWhenInUse].contains(self.manager.authorizationStatus)
     }
     
 }

@@ -133,7 +133,7 @@ final class MainViewController: UIViewController {
     
 //    MARK: - Actions
     @objc private func didTapChange() {
-        
+        self.viewModel.goToEditCity()
     }
     
 }

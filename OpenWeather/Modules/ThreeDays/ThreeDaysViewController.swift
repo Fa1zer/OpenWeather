@@ -53,7 +53,7 @@ final class ThreeDaysViewController: UIViewController {
         self.view.backgroundColor = .white
         self.view.addSubview(self.tableView)
         self.tableView.snp.makeConstraints { make in
-            make.leading.trailing.top.bottom.height.equalTo(self.view.safeAreaLayoutGuide)
+            make.leading.trailing.top.bottom.width.equalTo(self.view.safeAreaLayoutGuide)
         }
     }
     
@@ -68,7 +68,7 @@ final class ThreeDaysViewController: UIViewController {
     
 //    MARK: - Actions
     @objc private func didTapChange() {
-        
+        self.viewModel.goToEditCity()
     }
     
 }

@@ -26,6 +26,7 @@ final class MainViewController: UIViewController {
     private lazy var imageView: UIImageView = {
         let view = UIImageView()
         
+        view.contentMode = .scaleAspectFill
         view.translatesAutoresizingMaskIntoConstraints = false
         
         if let humidity = self.viewModel.data?.current?.humidity, humidity > 50 {
@@ -76,7 +77,7 @@ final class MainViewController: UIViewController {
         
         if let humidity = self.viewModel.data?.current?.humidity {
             if humidity > 50 {
-                text += "\n Есть осадки"
+                text += "\n Есть осадки, лучше возьмите зонтик"
             } else {
                 text += "\n Нет осадков"
             }
@@ -123,11 +124,11 @@ final class MainViewController: UIViewController {
     
 //    MARK: - Setup Navigation Bar
     private func setupNavigationBar() {
-        self.navigationController?.navigationBar.isHidden = false
-        self.navigationController?.navigationBar.backgroundColor = .white
-        self.navigationController?.navigationBar.barTintColor = .white
-        self.navigationItem.setHidesBackButton(true, animated: false)
-        self.navigationItem.rightBarButtonItem = .init(title: "Сменить", style: .plain, target: self, action: #selector(self.didTapChange))
+        self.tabBarController?.navigationController?.navigationBar.isHidden = false
+        self.tabBarController?.navigationController?.navigationBar.backgroundColor = .white
+        self.tabBarController?.navigationController?.navigationBar.barTintColor = .white
+        self.tabBarController?.navigationItem.setHidesBackButton(true, animated: false)
+        self.tabBarController?.navigationItem.rightBarButtonItem = .init(title: "Сменить", style: .plain, target: self, action: #selector(self.didTapChange))
     }
     
 //    MARK: - Actions

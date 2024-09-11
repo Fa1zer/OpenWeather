@@ -39,6 +39,10 @@
 		E30F886F2C91B80F00631301 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F886E2C91B80F00631301 /* MainModel.swift */; };
 		E30F88712C91B84500631301 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F88702C91B84500631301 /* MainViewModel.swift */; };
 		E30F88732C91B96400631301 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F88722C91B96400631301 /* MainViewController.swift */; };
+		E30F88762C91CE9700631301 /* DayWetherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F88752C91CE9700631301 /* DayWetherTableViewCell.swift */; };
+		E30F887A2C91D80C00631301 /* ThreeDaysModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F88792C91D80C00631301 /* ThreeDaysModel.swift */; };
+		E30F887C2C91D81400631301 /* ThreeDaysViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F887B2C91D81400631301 /* ThreeDaysViewModel.swift */; };
+		E30F887E2C91D81D00631301 /* ThreeDaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F887D2C91D81D00631301 /* ThreeDaysViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +79,10 @@
 		E30F886E2C91B80F00631301 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		E30F88702C91B84500631301 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		E30F88722C91B96400631301 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E30F88752C91CE9700631301 /* DayWetherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayWetherTableViewCell.swift; sourceTree = "<group>"; };
+		E30F88792C91D80C00631301 /* ThreeDaysModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDaysModel.swift; sourceTree = "<group>"; };
+		E30F887B2C91D81400631301 /* ThreeDaysViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDaysViewModel.swift; sourceTree = "<group>"; };
+		E30F887D2C91D81D00631301 /* ThreeDaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDaysViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +116,7 @@
 		E30F88012C90DB8700631301 /* OpenWeather */ = {
 			isa = PBXGroup;
 			children = (
+				E30F88742C91CE7C00631301 /* View */,
 				E30F886D2C91B7F100631301 /* Modules */,
 				E30F886A2C91B65F00631301 /* Navigation */,
 				E30F883C2C90F21200631301 /* Models */,
@@ -241,11 +250,38 @@
 		E30F886D2C91B7F100631301 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E30F88782C91D7F800631301 /* ThreeDays */,
+				E30F88772C91D7EE00631301 /* Main */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		E30F88742C91CE7C00631301 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E30F88752C91CE9700631301 /* DayWetherTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E30F88772C91D7EE00631301 /* Main */ = {
+			isa = PBXGroup;
+			children = (
 				E30F886E2C91B80F00631301 /* MainModel.swift */,
 				E30F88702C91B84500631301 /* MainViewModel.swift */,
 				E30F88722C91B96400631301 /* MainViewController.swift */,
 			);
-			path = Modules;
+			path = Main;
+			sourceTree = "<group>";
+		};
+		E30F88782C91D7F800631301 /* ThreeDays */ = {
+			isa = PBXGroup;
+			children = (
+				E30F88792C91D80C00631301 /* ThreeDaysModel.swift */,
+				E30F887B2C91D81400631301 /* ThreeDaysViewModel.swift */,
+				E30F887D2C91D81D00631301 /* ThreeDaysViewController.swift */,
+			);
+			path = ThreeDays;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,19 +368,23 @@
 				E30F882F2C90E85600631301 /* URLSchemes.swift in Sources */,
 				E30F88312C90E87200631301 /* URLHosts.swift in Sources */,
 				E30F88712C91B84500631301 /* MainViewModel.swift in Sources */,
+				E30F887C2C91D81400631301 /* ThreeDaysViewModel.swift in Sources */,
 				E30F88652C919CAD00631301 /* UserDefaultsManager.swift in Sources */,
 				E30F88282C90E48800631301 /* RequestError.swift in Sources */,
 				E30F88212C90E26300631301 /* RequestMethod.swift in Sources */,
+				E30F887E2C91D81D00631301 /* ThreeDaysViewController.swift in Sources */,
 				E30F88032C90DB8700631301 /* AppDelegate.swift in Sources */,
 				E30F88632C919C8B00631301 /* UserDefaultsKey.swift in Sources */,
 				E30F88732C91B96400631301 /* MainViewController.swift in Sources */,
 				E30F885A2C91964100631301 /* ForecastWeather.swift in Sources */,
+				E30F887A2C91D80C00631301 /* ThreeDaysModel.swift in Sources */,
 				E30F88582C91954C00631301 /* MainWeather.swift in Sources */,
 				E30F883B2C90ECDA00631301 /* URLError.swift in Sources */,
 				E30F882B2C90E4B100631301 /* RequestManager.swift in Sources */,
 				E30F886C2C91B6CB00631301 /* NavigationCoordinator.swift in Sources */,
 				E30F885E2C9198F700631301 /* DaysRequestModel.swift in Sources */,
 				E30F88542C91923600631301 /* LocationWeather.swift in Sources */,
+				E30F88762C91CE9700631301 /* DayWetherTableViewCell.swift in Sources */,
 				E30F88692C91B52100631301 /* CoreDataManager.swift in Sources */,
 				E30F88232C90E2B700631301 /* RequestAuthHeader.swift in Sources */,
 				E30F880D2C90DB8700631301 /* OpenWeather.xcdatamodeld in Sources */,

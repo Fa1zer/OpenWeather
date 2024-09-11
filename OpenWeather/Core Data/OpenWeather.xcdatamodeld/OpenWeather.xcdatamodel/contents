@@ -17,7 +17,7 @@
         <attribute name="minTemp" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
     <entity name="ForecastDayWeatherEntity" representedClassName="ForecastDayWeatherEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="date" attributeType="String"/>
         <relationship name="day" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="DayWeatherEntity"/>
     </entity>
     <entity name="LocationWeatherEntity" representedClassName="LocationWeatherEntity" syncable="YES" codeGenerationType="class">

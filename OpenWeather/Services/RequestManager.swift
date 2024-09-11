@@ -281,7 +281,9 @@ final class RequestManager {
             } else {
                 print("❌ Error: response is equal to nil.")
                 
-                completionHandler(RequestError.responseIsEqualToNil)
+                DispatchQueue.main.async {
+                    completionHandler(RequestError.responseIsEqualToNil)
+                }
                 
                 return
             }
@@ -289,5 +291,24 @@ final class RequestManager {
         .resume()
     }
     
+}
+
+final class WeatherRequestManager {
+    
+    static func getMain(city: String, completionHandler: @escaping (MainWeather?, Error?) -> Void) {
+        RequestManager.request(
+            sendModel: MainWeatherRequestModel(q: city),
+            method: .GET, url: URLWeatherContructor.shared.weather(),
+            completionHandler: completionHandler
+        )
+    }
+    
+    static func getDays(city: String, completionHandler: @escaping (DaysWeather?, Error?) -> Void) {
+        RequestManager.request(
+            sendModel: DaysRequestModel(q: city),
+            method: .GET, url: URLWeatherContructor.shared.weather(),
+            completionHandler: completionHandler
+        )
+    }
     
 }

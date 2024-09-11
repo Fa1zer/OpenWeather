@@ -8,5 +8,5 @@
 import Foundation
 
 enum URLHosts: String {
-    case base = "api.openweathermap.org"
+    case base = "api.weatherapi.com"
 }

@@ -35,6 +35,7 @@
 		E30F88652C919CAD00631301 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F88642C919CAD00631301 /* UserDefaultsManager.swift */; };
 		E30F88672C919EB400631301 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F88662C919EB400631301 /* LocationManager.swift */; };
 		E30F88692C91B52100631301 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F88682C91B52100631301 /* CoreDataManager.swift */; };
+		E30F886C2C91B6CB00631301 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F886B2C91B6CB00631301 /* NavigationCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		E30F88642C919CAD00631301 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		E30F88662C919EB400631301 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		E30F88682C91B52100631301 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		E30F886B2C91B6CB00631301 /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 		E30F88012C90DB8700631301 /* OpenWeather */ = {
 			isa = PBXGroup;
 			children = (
+				E30F886A2C91B65F00631301 /* Navigation */,
 				E30F883C2C90F21200631301 /* Models */,
 				E30F88292C90E49100631301 /* Services */,
 				E30F881F2C90E15D00631301 /* Enums */,
@@ -220,6 +223,14 @@
 			path = UserDefaults;
 			sourceTree = "<group>";
 		};
+		E30F886A2C91B65F00631301 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				E30F886B2C91B6CB00631301 /* NavigationCoordinator.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -312,6 +323,7 @@
 				E30F88582C91954C00631301 /* MainWeather.swift in Sources */,
 				E30F883B2C90ECDA00631301 /* URLError.swift in Sources */,
 				E30F882B2C90E4B100631301 /* RequestManager.swift in Sources */,
+				E30F886C2C91B6CB00631301 /* NavigationCoordinator.swift in Sources */,
 				E30F885E2C9198F700631301 /* DaysRequestModel.swift in Sources */,
 				E30F88542C91923600631301 /* LocationWeather.swift in Sources */,
 				E30F88692C91B52100631301 /* CoreDataManager.swift in Sources */,

@@ -125,8 +125,8 @@ class DayWetherTableViewCell: UITableViewCell {
         self.contentView.addSubview(self.maxStackView)
         self.minStackView.addArrangedSubview(self.minTitleLabel)
         self.minStackView.addArrangedSubview(self.minValueLabel)
-        self.minStackView.addArrangedSubview(self.maxTitleLabel)
-        self.minStackView.addArrangedSubview(self.maxValueLabel)
+        self.maxStackView.addArrangedSubview(self.maxTitleLabel)
+        self.maxStackView.addArrangedSubview(self.maxValueLabel)
         self.iconImageView.snp.makeConstraints { make in
             make.height.width.equalTo(50)
             make.top.leading.equalToSuperview().inset(15)

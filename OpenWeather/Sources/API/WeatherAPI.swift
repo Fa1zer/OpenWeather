@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct OpenWeatherAPI {
-    static let apiKey = "976776f7173d786cf064eb0a0eed8bb2"
+struct WeatherAPI {
+    static let apiKey = "995e1956ee514b6d82783619241109"
 }

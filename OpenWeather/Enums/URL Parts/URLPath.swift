@@ -8,6 +8,6 @@
 import Foundation
 
 enum URLPath: String {
-    case data, weather, onecall
-    case version = "2.5"
+    case currentJson = "current.json"
+    case version = "v1"
 }

@@ -54,11 +54,7 @@ final class URLWeatherContructor {
     static let shared = URLWeatherContructor(custructor: .init(scheme: .https, host: .base))
     
     func weather() -> URL {
-        self.custructor.url(paths: .data, .version, .weather)
-    }
-    
-    func onecall() -> URL {
-        self.custructor.url(paths: .data, .version, .onecall)
+        self.custructor.url(paths: .version, .currentJson)
     }
     
 }

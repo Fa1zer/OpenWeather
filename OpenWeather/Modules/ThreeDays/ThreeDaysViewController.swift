@@ -23,10 +23,13 @@ final class ThreeDaysViewController: UIViewController {
     }
     
 //    MARK: - UI Properties
-    private let tableView: UITableView = {
+    private lazy var tableView: UITableView = {
         let view = UITableView()
         
         view.backgroundColor = .white
+        view.dataSource = self
+        view.delegate = self
+        view.register(DayWetherTableViewCell.self, forCellReuseIdentifier: DayWetherTableViewCell.id)
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
@@ -61,15 +64,26 @@ final class ThreeDaysViewController: UIViewController {
 extension ThreeDaysViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        self.viewModel.data.forecastday.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: DayWetherTableViewCell.id,
+            for: indexPath
+        ) as? DayWetherTableViewCell else { return .init() }
+        
+        cell.wether = Array(self.viewModel.data.forecastday)[indexPath.row]
+        
+        return cell
     }
     
 }
 
 extension ThreeDaysViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
+    }
     
 }

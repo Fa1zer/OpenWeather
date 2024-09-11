@@ -43,6 +43,8 @@
 		E30F887A2C91D80C00631301 /* ThreeDaysModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F88792C91D80C00631301 /* ThreeDaysModel.swift */; };
 		E30F887C2C91D81400631301 /* ThreeDaysViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F887B2C91D81400631301 /* ThreeDaysViewModel.swift */; };
 		E30F887E2C91D81D00631301 /* ThreeDaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F887D2C91D81D00631301 /* ThreeDaysViewController.swift */; };
+		E37A722B2C91E12D00D6BAD0 /* DaysWeatherEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A72292C91E12D00D6BAD0 /* DaysWeatherEntity+CoreDataClass.swift */; };
+		E37A722C2C91E12D00D6BAD0 /* DaysWeatherEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A722A2C91E12D00D6BAD0 /* DaysWeatherEntity+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +85,8 @@
 		E30F88792C91D80C00631301 /* ThreeDaysModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDaysModel.swift; sourceTree = "<group>"; };
 		E30F887B2C91D81400631301 /* ThreeDaysViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDaysViewModel.swift; sourceTree = "<group>"; };
 		E30F887D2C91D81D00631301 /* ThreeDaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDaysViewController.swift; sourceTree = "<group>"; };
+		E37A72292C91E12D00D6BAD0 /* DaysWeatherEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DaysWeatherEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E37A722A2C91E12D00D6BAD0 /* DaysWeatherEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DaysWeatherEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +224,8 @@
 		E30F883C2C90F21200631301 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E37A72292C91E12D00D6BAD0 /* DaysWeatherEntity+CoreDataClass.swift */,
+				E37A722A2C91E12D00D6BAD0 /* DaysWeatherEntity+CoreDataProperties.swift */,
 				E30F88532C91923600631301 /* LocationWeather.swift */,
 				E30F88552C9193B100631301 /* CurrentWeather.swift */,
 				E30F88572C91954C00631301 /* MainWeather.swift */,
@@ -360,6 +366,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E37A722B2C91E12D00D6BAD0 /* DaysWeatherEntity+CoreDataClass.swift in Sources */,
+				E37A722C2C91E12D00D6BAD0 /* DaysWeatherEntity+CoreDataProperties.swift in Sources */,
 				E30F88352C90EB2300631301 /* URLConstructor.swift in Sources */,
 				E30F88382C90EB4300631301 /* WeatherAPI.swift in Sources */,
 				E30F885C2C91988700631301 /* DaysWeather.swift in Sources */,

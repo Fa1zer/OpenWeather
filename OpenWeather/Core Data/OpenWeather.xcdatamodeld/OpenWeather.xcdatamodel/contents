@@ -6,7 +6,7 @@
         <attribute name="isDay" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="temp" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
-    <entity name="DaysWeatherEntity" representedClassName="DaysWeatherEntity" syncable="YES" codeGenerationType="class">
+    <entity name="DaysWeatherEntity" representedClassName="DaysWeatherEntity" syncable="YES">
         <relationship name="forecastday" toMany="YES" deletionRule="No Action" destinationEntity="ForecastDayWeatherEntity"/>
         <relationship name="location" maxCount="1" deletionRule="No Action" destinationEntity="LocationWeatherEntity"/>
     </entity>

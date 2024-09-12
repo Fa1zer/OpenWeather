@@ -9,5 +9,6 @@ import Foundation
 
 enum URLPath: String {
     case currentJson = "current.json"
+    case forecastJson = "forecast.json"
     case version = "v1"
 }

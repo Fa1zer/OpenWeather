@@ -15,7 +15,7 @@ struct CurrentWeather: Decodable {
     
     enum CodingKeys: String, CodingKey {
         case temp = "temp_c"
-        case isDay = "id_day"
+        case isDay = "is_day"
         case cloud, humidity
     }
 }

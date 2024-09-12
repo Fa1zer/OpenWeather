@@ -25,6 +25,7 @@ final class LocationManager: NSObject {
 //    MARK: - Request Authorization
     func requestAuthorization(locationPremitionHandler: @escaping (Bool) -> Void) {
         self.manager.delegate = self
+        self.locationPremitionHandler = locationPremitionHandler
         self.manager.requestWhenInUseAuthorization()
     }
     
@@ -32,6 +33,7 @@ final class LocationManager: NSObject {
     func getLocation(didUpdateLocationHandler: @escaping (Double, Double) -> Void) {
         self.manager.delegate = self
         self.manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        self.didUpdateLocationHandler = didUpdateLocationHandler
         self.manager.startUpdatingLocation()
     }
     
@@ -64,12 +66,14 @@ extension LocationManager: CLLocationManagerDelegate {
         self.locationPremitionHandler?(
             [CLAuthorizationStatus.authorizedAlways, .authorizedWhenInUse].contains(manager.authorizationStatus)
         )
+        self.locationPremitionHandler = nil
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let coodinate = manager.location?.coordinate else { return }
         
         self.didUpdateLocationHandler?(coodinate.latitude, coodinate.longitude)
+        self.didUpdateLocationHandler = nil
     }
     
 }

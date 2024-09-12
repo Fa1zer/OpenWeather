@@ -27,7 +27,7 @@ final class NoInternetViewController: UIViewController {
         let view = UIImageView(image: .init(systemName: "wifi.exclamationmark"))
         
         view.contentMode = .scaleAspectFill
-        view.tintColor = .systemBlue
+        view.tintColor = #colorLiteral(red: 0.1254901961, green: 0.3058823529, blue: 0.7803921569, alpha: 1)
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
@@ -38,7 +38,7 @@ final class NoInternetViewController: UIViewController {
         
         view.text = "Нет интернета"
         view.font = .boldSystemFont(ofSize: 20)
-        view.textColor = .systemBlue
+        view.textColor = #colorLiteral(red: 0.1254901961, green: 0.3058823529, blue: 0.7803921569, alpha: 1)
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
@@ -63,6 +63,7 @@ final class NoInternetViewController: UIViewController {
     
 //    MARK: - Setup View
     private func setupViews() {
+        self.view.backgroundColor = .white
         self.view.addSubview(self.stackView)
         self.stackView.addArrangedSubview(self.imageView)
         self.stackView.addArrangedSubview(self.titleLabel)

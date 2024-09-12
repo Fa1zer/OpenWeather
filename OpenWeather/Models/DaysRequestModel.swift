@@ -12,5 +12,5 @@ struct DaysRequestModel: Encodable {
     var q: String
     var days = 3
     var aqi = "no"
-    var lerts = "no"
+    var alerts = "no"
 }

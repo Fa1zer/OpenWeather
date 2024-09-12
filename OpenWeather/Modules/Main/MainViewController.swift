@@ -29,11 +29,11 @@ final class MainViewController: UIViewController {
         view.contentMode = .scaleAspectFill
         view.translatesAutoresizingMaskIntoConstraints = false
         
-        if let humidity = self.viewModel.data?.current?.humidity, humidity > 50 {
+        if self.viewModel.data.current.humidity > 50 {
             view.image = .init(resource: .rain)
-        } else if let cloud = self.viewModel.data?.current?.cloud, cloud > 50 {
+        } else if self.viewModel.data.current.cloud > 50 {
             view.image = .init(resource: .clouds)
-        } else if let isDay = self.viewModel.data?.current?.isDay, isDay {
+        } else if self.viewModel.data.current.isDay {
             view.image = .init(resource: .sun)
         } else {
             view.image = .init(resource: .moon)
@@ -49,9 +49,9 @@ final class MainViewController: UIViewController {
         view.textColor = .black
         view.translatesAutoresizingMaskIntoConstraints = false
         
-        if let temp = self.viewModel.data?.current?.temp {
-            view.text = "\(temp)°C"
-        }
+//        if let temp = self.viewModel.data.current.temp {
+            view.text = "\(self.viewModel.data.current.temp)°C"
+//        }
         
         return view
     }()
@@ -60,28 +60,29 @@ final class MainViewController: UIViewController {
         let view = UILabel()
         var text = String()
         
+        view.numberOfLines = 2
         view.font = .systemFont(ofSize: 16)
         view.textColor = .black
         view.textAlignment = .center
         view.translatesAutoresizingMaskIntoConstraints = false
         
-        if let temp = self.viewModel.data?.current?.temp {
-            if temp > 15 {
+//        if let temp = self.viewModel.data?.current.temp {
+            if self.viewModel.data.current.temp > 15 {
                 text = "Температура выше 15 градусов"
-            } else if temp >= .zero {
+            } else if self.viewModel.data.current.temp >= .zero {
                 text = "Температура от 0 до 15 градусов"
             } else {
                 text = "Температура меньше 0 градусов"
             }
-        }
+//        }
         
-        if let humidity = self.viewModel.data?.current?.humidity {
-            if humidity > 50 {
+//        if let humidity = self.viewModel.data?.current.humidity {
+            if self.viewModel.data.current.humidity > 50 {
                 text += "\n Есть осадки, лучше возьмите зонтик"
             } else {
                 text += "\n Нет осадков"
             }
-        }
+//        }
         
         view.text = text
         
@@ -98,7 +99,7 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel.getCity()
-        self.title = self.viewModel.city
+        self.tabBarController?.title = self.viewModel.city
     }
     
 //    MARK: - Setup Views
@@ -109,7 +110,7 @@ final class MainViewController: UIViewController {
         self.view.addSubview(self.descriptionLabel)
         self.imageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(100)
+            make.top.equalToSuperview().inset(200)
             make.width.height.equalTo(100)
         }
         self.tempLabel.snp.makeConstraints { make in
@@ -128,6 +129,7 @@ final class MainViewController: UIViewController {
         self.tabBarController?.navigationController?.navigationBar.backgroundColor = .white
         self.tabBarController?.navigationController?.navigationBar.barTintColor = .white
         self.tabBarController?.navigationItem.setHidesBackButton(true, animated: false)
+        self.tabBarController?.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
         self.tabBarController?.navigationItem.rightBarButtonItem = .init(title: "Сменить", style: .plain, target: self, action: #selector(self.didTapChange))
     }
     

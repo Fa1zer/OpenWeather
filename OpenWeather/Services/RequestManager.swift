@@ -296,17 +296,31 @@ final class RequestManager {
 final class WeatherRequestManager {
     
     static func getMain(city: String, completionHandler: @escaping (MainWeather?, Error?) -> Void) {
+        var url = URLComponents(string: URLWeatherContructor.shared.weather().absoluteString)
+        
+        url?.queryItems = [.init(name: "key", value: WeatherAPI.apiKey), .init(name: "q", value: city), .init(name: "aqi", value: "no")]
+        
         RequestManager.request(
-            sendModel: MainWeatherRequestModel(q: city),
-            method: .GET, url: URLWeatherContructor.shared.weather(),
+            method: .GET,
+            url: url?.url ?? .init(fileURLWithPath: .init()),
             completionHandler: completionHandler
         )
     }
     
     static func getDays(city: String, completionHandler: @escaping (DaysWeather?, Error?) -> Void) {
+        var url = URLComponents(string: URLWeatherContructor.shared.forecast().absoluteString)
+        
+        url?.queryItems = [
+            .init(name: "key", value: WeatherAPI.apiKey),
+            .init(name: "q", value: city),
+            .init(name: "aqi", value: "no"),
+            .init(name: "days", value: "3"),
+            .init(name: "alerts", value: "no")
+        ]
+        
         RequestManager.request(
-            sendModel: DaysRequestModel(q: city),
-            method: .GET, url: URLWeatherContructor.shared.weather(),
+            method: .GET,
+            url: url?.url ?? .init(fileURLWithPath: .init()),
             completionHandler: completionHandler
         )
     }

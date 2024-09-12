@@ -36,4 +36,8 @@ final class CityEditorViewModel: NavigationCoordinatorDelegate {
         self.coordinator?.goToLoader()
     }
     
+    func getLoader() -> LoaderViewController? {
+        self.coordinator?.getLoader()
+    }
+    
 }

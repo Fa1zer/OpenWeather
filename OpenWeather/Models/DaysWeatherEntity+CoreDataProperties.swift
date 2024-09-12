@@ -17,8 +17,8 @@ extension DaysWeatherEntity {
     }
 
     @NSManaged public var forecastday: Set<ForecastDayWeatherEntity>
-    @NSManaged public var location: LocationWeatherEntity?
-
+    @NSManaged public var location: LocationWeatherEntity
+    @NSManaged public var identifyer: UUID
 }
 
 // MARK: Generated accessors for forecastday

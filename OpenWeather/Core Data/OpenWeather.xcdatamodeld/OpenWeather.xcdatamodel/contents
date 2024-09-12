@@ -7,8 +7,14 @@
         <attribute name="temp" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
     <entity name="DaysWeatherEntity" representedClassName="DaysWeatherEntity" syncable="YES">
+        <attribute name="identifyer" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="forecastday" toMany="YES" deletionRule="No Action" destinationEntity="ForecastDayWeatherEntity"/>
         <relationship name="location" maxCount="1" deletionRule="No Action" destinationEntity="LocationWeatherEntity"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="identifyer"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="DayWeatherEntity" representedClassName="DayWeatherEntity" syncable="YES" codeGenerationType="class">
         <attribute name="dailyWillItRain" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -24,8 +30,14 @@
         <attribute name="localtime" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
     </entity>
-    <entity name="MainWeatherEntity" representedClassName="MainWeatherEntity" syncable="YES" codeGenerationType="class">
+    <entity name="MainWeatherEntity" representedClassName="MainWeatherEntity" syncable="YES">
+        <attribute name="identifyer" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="current" maxCount="1" deletionRule="No Action" destinationEntity="CurrentWeatherEntity"/>
         <relationship name="location" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="LocationWeatherEntity"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="identifyer"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
 </model>

@@ -25,11 +25,11 @@ final class NavigationCoordinator {
         self.tabBarController = tabBarController
     }
     
-    static let schared = NavigationCoordinator(navigationController: .init(), tabBarController: .init())
+    static let schared = NavigationCoordinator(navigationController: .init(), tabBarController: TapBarWithBigItem())
     
 //    MARK: - Start
     func start() -> UINavigationController {
-        self.goToLoader()
+         self.goToLoader()
         
         return self.navigationController
     }
@@ -49,17 +49,41 @@ final class NavigationCoordinator {
         
         viewModel.coordinator = self
         
-        return .init(viewModel: viewModel)
+        let view = ThreeDaysViewController(viewModel: viewModel)
+        
+        view.tabBarItem = .init(title: nil, image: .init(systemName: "list.dash.header.rectangle"), selectedImage: .init(systemName: "list.dash.header.rectangle"))
+        
+        return view
     }
     
 //    MARK: - City Editor
     func goToCityEditor() {
-        self.navigationController.pushViewController(CityEditorViewController(viewModel: .init(model: .init())), animated: true)
+        let viewModel = CityEditorViewModel(model: .init())
+        
+        viewModel.coordinator = self
+        self.navigationController.pushViewController(CityEditorViewController(viewModel: viewModel), animated: true)
     }
     
 //    MARK: - Loader
     func goToLoader() {
-        self.navigationController.pushViewController(LoaderViewController(viewModel: .init(model: .init())), animated: true)
+        let viewModel = LoaderViewModel(model: .init())
+        
+        viewModel.coordinator = self
+        self.navigationController.pushViewController(LoaderViewController(viewModel: viewModel), animated: true)
+    }
+    
+//    MARK: - No Internet
+    func goToNoInternet() {
+        let viewModel = NoInternetViewModel(model: .init())
+        
+        viewModel.coordinator = self
+        self.navigationController.pushViewController(NoInternetViewController(viewModel: viewModel), animated: true)
+    }
+    
+//    MARK: - Go To Tab Bar
+    func goToTabBar(main: MainWeatherEntity, days: DaysWeatherEntity) {
+        self.tabBarController.viewControllers = [self.getMain(with: main), self.getThreeDyas(with: days)]
+        self.navigationController.pushViewController(self.tabBarController, animated: true)
     }
     
 }

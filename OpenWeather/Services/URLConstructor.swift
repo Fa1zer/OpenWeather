@@ -57,4 +57,8 @@ final class URLWeatherContructor {
         self.custructor.url(paths: .version, .currentJson)
     }
     
+    func forecast() -> URL {
+        self.custructor.url(paths: .version, .forecastJson)
+    }
+    
 }

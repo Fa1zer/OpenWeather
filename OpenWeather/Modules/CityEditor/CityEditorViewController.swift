@@ -28,7 +28,7 @@ final class CityEditorViewController: UIViewController {
         
         view.backgroundColor = .clear
         view.textColor = .black
-        view.placeholder = "Город"
+        view.attributedPlaceholder = NSAttributedString(string: "Город", attributes: [.foregroundColor: UIColor.lightGray])
         view.font = .systemFont(ofSize: 16)
         view.addTarget(self, action: #selector(self.didSetCityText), for: .editingChanged)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -40,7 +40,10 @@ final class CityEditorViewController: UIViewController {
         let view = UIButton()
         
         view.setImage(.init(systemName: "chevron.right"), for: .normal)
-        view.backgroundColor = .systemBlue
+        view.tintColor = #colorLiteral(red: 0.1254901961, green: 0.3058823529, blue: 0.7803921569, alpha: 1)
+        view.clipsToBounds = true
+        view.layer.masksToBounds = true
+        view.layer.cornerRadius = 12.5
         view.addTarget(self, action: #selector(self.didTapNext), for: .touchUpInside)
         view.imageView?.translatesAutoresizingMaskIntoConstraints = false
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -53,7 +56,7 @@ final class CityEditorViewController: UIViewController {
         super.viewDidLoad()
         self.viewModel.setCity()
         self.textField.text = self.viewModel.city
-        self.nextButton.isEnabled = (self.viewModel.city?.isEmpty ?? true)
+        self.nextButton.isEnabled = !(self.viewModel.city?.isEmpty ?? true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,9 +72,19 @@ final class CityEditorViewController: UIViewController {
         self.view.addSubview(self.nextButton)
         self.textField.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(15)
-            make.trailing.equalTo(self.nextButton.snp.left).inset(-15)
-            make.centerX.equalToSuperview()
+            make.trailing.equalTo(self.nextButton.snp.leading).inset(-15)
+            make.centerY.equalToSuperview()
             make.height.equalTo(50)
+        }
+        self.nextButton.snp.makeConstraints { make in
+            make.leading.equalTo(self.textField.snp.trailing).inset(-15)
+            make.trailing.equalToSuperview().inset(15)
+            make.centerY.equalToSuperview()
+            make.height.width.equalTo(25)
+        }
+        self.nextButton.imageView?.snp.removeConstraints()
+        self.nextButton.imageView?.snp.makeConstraints { make in
+            make.leading.trailing.top.bottom.equalToSuperview()
         }
     }
     
@@ -83,7 +96,7 @@ final class CityEditorViewController: UIViewController {
 //    MARK: - Actions
     @objc private func didSetCityText() {
         self.viewModel.city = self.textField.text
-        self.nextButton.isEnabled = (self.viewModel.city?.isEmpty ?? true)
+        self.nextButton.isEnabled = !(self.viewModel.city?.isEmpty ?? true)
     }
     
     @objc private func didTapNext() {

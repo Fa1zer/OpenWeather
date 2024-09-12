@@ -16,7 +16,7 @@ final class CoreDataManager<T : NSManagedObject>: NSObject {
     
 //    MARK: - Properties
     let persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "FINDAPET_App")
+        let container = NSPersistentContainer(name: "OpenWeather")
         
         container.viewContext.mergePolicy = NSMergePolicyType.mergeByPropertyObjectTrumpMergePolicyType
         container.loadPersistentStores { storeDescription, error in
@@ -31,7 +31,7 @@ final class CoreDataManager<T : NSManagedObject>: NSObject {
     private(set) lazy var fetchedResultController: NSFetchedResultsController<T> = {
         let request = NSFetchRequest<T>(entityName: .init(describing: T.self))
         
-        request.sortDescriptors = [.init(key: "id", ascending: false)]
+        request.sortDescriptors = [.init(key: "identifyer", ascending: false)]
         
         return .init(
             fetchRequest: request,

@@ -25,6 +25,26 @@ final class LoaderViewController: UIViewController {
     private let dispatchGroup = DispatchGroup()
     
     
+//    MARK: - UI Properties
+    private let imageView: UIImageView = {
+        let view = UIImageView(image: .init(resource: .mainIcon))
+        
+        view.contentMode = .scaleAspectFill
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }()
+    
+    private let activityIndicatorView: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView(style: .medium)
+        
+        view.color = .white
+        view.startAnimating()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }()
+    
 //    MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,9 +63,9 @@ final class LoaderViewController: UIViewController {
             }
             self?.dispatchGroup.notify(queue: .main) {
                 if self?.viewModel.main != nil, self?.viewModel.days != nil {
-                    
+                    self?.viewModel.goToTabBar()
                 } else {
-                    
+                    self?.viewModel.goToNoInternet()
                 }
             }
         } onError: { [ weak self ] _ in
@@ -53,5 +73,32 @@ final class LoaderViewController: UIViewController {
         }
     }
     
+//    MARK: - Life Cycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setupViews()
+        self.setupNavigationBar()
+    }
+    
+//    MARK: - Setup View
+    func setupViews() {
+        self.view.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.3058823529, blue: 0.7803921569, alpha: 1)
+        self.view.addSubview(self.imageView)
+        self.view.addSubview(self.activityIndicatorView)
+        self.imageView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.width.height.equalTo(self.view.bounds.width - 40)
+        }
+        self.activityIndicatorView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().inset(40)
+        }
+    }
+    
+//    MARK: - Setup Navigation Bar
+    func setupNavigationBar() {
+        self.tabBarController?.navigationController?.navigationBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = true
+    }
     
 }

@@ -40,12 +40,13 @@ final class ThreeDaysViewController: UIViewController {
         super.viewWillAppear(animated)
         self.setupNavigationBar()
         self.setupViews()
+//        self.setupTabBar()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel.getCity()
-        self.title = self.viewModel.city
+        self.tabBarController?.title = self.viewModel.city
     }
     
 //    MARK: - Setup View
@@ -62,8 +63,14 @@ final class ThreeDaysViewController: UIViewController {
         self.tabBarController?.navigationController?.navigationBar.isHidden = false
         self.tabBarController?.navigationController?.navigationBar.backgroundColor = .white
         self.tabBarController?.navigationController?.navigationBar.barTintColor = .white
+        self.tabBarController?.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
         self.tabBarController?.navigationItem.setHidesBackButton(true, animated: false)
         self.tabBarController?.navigationItem.rightBarButtonItem = .init(title: "Сменить", style: .plain, target: self, action: #selector(self.didTapChange))
+    }
+    
+//    MARK: - Setup Tab Bar
+    private func setupTabBar() {
+        self.tabBarItem = .init(title: nil, image: .init(systemName: "list.dash.header.rectangle"), selectedImage: .init(systemName: "list.dash.header.rectangle"))
     }
     
 //    MARK: - Actions

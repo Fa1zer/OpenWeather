@@ -45,6 +45,8 @@
 		E30F887E2C91D81D00631301 /* ThreeDaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30F887D2C91D81D00631301 /* ThreeDaysViewController.swift */; };
 		E3324AA62C92B135000210D1 /* MainWeatherEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3324AA42C92B135000210D1 /* MainWeatherEntity+CoreDataClass.swift */; };
 		E3324AA72C92B135000210D1 /* MainWeatherEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3324AA52C92B135000210D1 /* MainWeatherEntity+CoreDataProperties.swift */; };
+		E3324AAA2C92B9B3000210D1 /* LocationWeatherEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3324AA82C92B9B3000210D1 /* LocationWeatherEntity+CoreDataClass.swift */; };
+		E3324AAB2C92B9B3000210D1 /* LocationWeatherEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3324AA92C92B9B3000210D1 /* LocationWeatherEntity+CoreDataProperties.swift */; };
 		E37A722B2C91E12D00D6BAD0 /* DaysWeatherEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A72292C91E12D00D6BAD0 /* DaysWeatherEntity+CoreDataClass.swift */; };
 		E37A722C2C91E12D00D6BAD0 /* DaysWeatherEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A722A2C91E12D00D6BAD0 /* DaysWeatherEntity+CoreDataProperties.swift */; };
 		E37A722F2C91E55F00D6BAD0 /* CityEditorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A722E2C91E55F00D6BAD0 /* CityEditorModel.swift */; };
@@ -99,6 +101,8 @@
 		E30F887D2C91D81D00631301 /* ThreeDaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDaysViewController.swift; sourceTree = "<group>"; };
 		E3324AA42C92B135000210D1 /* MainWeatherEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainWeatherEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E3324AA52C92B135000210D1 /* MainWeatherEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainWeatherEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E3324AA82C92B9B3000210D1 /* LocationWeatherEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationWeatherEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E3324AA92C92B9B3000210D1 /* LocationWeatherEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationWeatherEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E37A72292C91E12D00D6BAD0 /* DaysWeatherEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DaysWeatherEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E37A722A2C91E12D00D6BAD0 /* DaysWeatherEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DaysWeatherEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E37A722E2C91E55F00D6BAD0 /* CityEditorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityEditorModel.swift; sourceTree = "<group>"; };
@@ -248,6 +252,8 @@
 		E30F883C2C90F21200631301 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E3324AA82C92B9B3000210D1 /* LocationWeatherEntity+CoreDataClass.swift */,
+				E3324AA92C92B9B3000210D1 /* LocationWeatherEntity+CoreDataProperties.swift */,
 				E3324AA42C92B135000210D1 /* MainWeatherEntity+CoreDataClass.swift */,
 				E3324AA52C92B135000210D1 /* MainWeatherEntity+CoreDataProperties.swift */,
 				E37A72292C91E12D00D6BAD0 /* DaysWeatherEntity+CoreDataClass.swift */,
@@ -450,6 +456,8 @@
 				E30F88632C919C8B00631301 /* UserDefaultsKey.swift in Sources */,
 				E30F88732C91B96400631301 /* MainViewController.swift in Sources */,
 				E37A72442C92341700D6BAD0 /* NoInternetViewController.swift in Sources */,
+				E3324AAA2C92B9B3000210D1 /* LocationWeatherEntity+CoreDataClass.swift in Sources */,
+				E3324AAB2C92B9B3000210D1 /* LocationWeatherEntity+CoreDataProperties.swift in Sources */,
 				E30F885A2C91964100631301 /* ForecastWeather.swift in Sources */,
 				E30F887A2C91D80C00631301 /* ThreeDaysModel.swift in Sources */,
 				E30F88582C91954C00631301 /* MainWeather.swift in Sources */,

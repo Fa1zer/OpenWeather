@@ -51,7 +51,7 @@ class DayWetherTableViewCell: UITableViewCell {
         let view = UILabel()
         
         view.font = .boldSystemFont(ofSize: 16)
-        view.backgroundColor = .black
+        view.textColor = .black
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
@@ -80,8 +80,10 @@ class DayWetherTableViewCell: UITableViewCell {
     private let minTitleLabel: UILabel = {
         let view = UILabel()
         
-        view.text = "Мин"
+        view.text = "МИН"
         view.font = .boldSystemFont(ofSize: 14)
+        view.textColor = .black
+        view.textAlignment = .center
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
@@ -90,8 +92,10 @@ class DayWetherTableViewCell: UITableViewCell {
     private let maxTitleLabel: UILabel = {
         let view = UILabel()
         
-        view.text = "Макс"
+        view.text = "МАКС"
         view.font = .boldSystemFont(ofSize: 14)
+        view.textColor = .black
+        view.textAlignment = .center
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
@@ -101,6 +105,8 @@ class DayWetherTableViewCell: UITableViewCell {
         let view = UILabel()
         
         view.font = .systemFont(ofSize: 14)
+        view.textColor = .black
+        view.textAlignment = .center
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
@@ -110,6 +116,8 @@ class DayWetherTableViewCell: UITableViewCell {
         let view = UILabel()
         
         view.font = .systemFont(ofSize: 14)
+        view.textColor = .black
+        view.textAlignment = .center
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
@@ -128,20 +136,22 @@ class DayWetherTableViewCell: UITableViewCell {
         self.maxStackView.addArrangedSubview(self.maxTitleLabel)
         self.maxStackView.addArrangedSubview(self.maxValueLabel)
         self.iconImageView.snp.makeConstraints { make in
-            make.height.width.equalTo(50)
-            make.top.leading.equalToSuperview().inset(15)
+            make.height.width.equalTo(80)
+            make.centerX.equalToSuperview().multipliedBy(0.5)
+            make.top.equalToSuperview().inset(15)
+            
         }
         self.timeLabel.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().inset(15)
             make.centerY.equalTo(self.iconImageView)
+            make.centerX.equalToSuperview().multipliedBy(1.5)
         }
         self.minStackView.snp.makeConstraints { make in
-            make.top.equalTo(self.iconImageView.snp.bottom).inset(-10)
+            make.top.equalTo(self.iconImageView.snp.bottom).inset(-20)
             make.centerX.equalToSuperview().multipliedBy(0.5)
             make.bottom.equalToSuperview().inset(15)
         }
         self.maxStackView.snp.makeConstraints { make in
-            make.top.equalTo(self.iconImageView.snp.bottom).inset(-10)
+            make.top.equalTo(self.iconImageView.snp.bottom).inset(-20)
             make.centerX.equalToSuperview().multipliedBy(1.5)
             make.bottom.equalToSuperview().inset(15)
         }

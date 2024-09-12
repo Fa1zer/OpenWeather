@@ -67,7 +67,7 @@ final class CoreDataManager<T : NSManagedObject>: NSObject {
 //    MARK: - Save
     func save(_ model: T, completionHandler: @escaping (Error?) -> Void) {
         do {
-            try model.managedObjectContext?.save()
+            try! model.managedObjectContext?.save()
             
             completionHandler(nil)
         } catch {

@@ -26,7 +26,7 @@
         <attribute name="date" attributeType="String"/>
         <relationship name="day" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="DayWeatherEntity"/>
     </entity>
-    <entity name="LocationWeatherEntity" representedClassName="LocationWeatherEntity" syncable="YES" codeGenerationType="class">
+    <entity name="LocationWeatherEntity" representedClassName="LocationWeatherEntity" syncable="YES">
         <attribute name="localtime" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
     </entity>

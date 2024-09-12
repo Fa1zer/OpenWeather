@@ -177,9 +177,21 @@ final class LoaderViewModel: NavigationCoordinatorDelegate {
                     entity.addToForecastday(forecastEntity)
                 }
                 
-                self?.model.saveDays(entity, onError: { _ in }, onSuccess: { })
-                self?.days = entity
-                onSuccess()
+                self?.model.saveDays(entity) { _ in
+                    self?.model.getDays { models in
+                        self?.days = models.last
+                        onSuccess()
+                    } onError: { error in
+                        onError(error)
+                    }
+                } onSuccess: {
+                    self?.model.getDays { models in
+                        self?.days = models.last
+                        onSuccess()
+                    } onError: { error in
+                        onError(error)
+                    }
+                }
             } onError: { [ weak self ] _ in
                 self?.model.getDays { models in
                     self?.days = models.last

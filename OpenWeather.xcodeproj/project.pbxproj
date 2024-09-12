@@ -627,6 +627,7 @@
 				DEVELOPMENT_TEAM = FY2MUX2TBL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "OpenWeather/Supporting Files/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Just Weather";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Для автоматизированной работы сервиса нам нужен доступ к вашей локации";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
@@ -658,6 +659,7 @@
 				DEVELOPMENT_TEAM = FY2MUX2TBL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "OpenWeather/Supporting Files/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Just Weather";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Для автоматизированной работы сервиса нам нужен доступ к вашей локации";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;

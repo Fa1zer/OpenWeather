@@ -10,12 +10,19 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
-    private let coodinator = NavigationCoordinator.schared
+    private var coodinator = NavigationCoordinator(navigationController: .init(), tabBarController: TapBarWithBigItem())
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         self.window = .init(windowScene: windowScene)
+        self.window?.rootViewController = coodinator.start()
+        self.window?.makeKeyAndVisible()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.restart), name: .init("restart"), object: nil)
+    }
+    
+    @objc private func restart() {
+        self.coodinator = .init(navigationController: .init(), tabBarController: TapBarWithBigItem())
         self.window?.rootViewController = coodinator.start()
         self.window?.makeKeyAndVisible()
     }

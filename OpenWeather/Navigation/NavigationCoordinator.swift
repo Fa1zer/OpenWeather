@@ -72,6 +72,14 @@ final class NavigationCoordinator {
         self.navigationController.pushViewController(LoaderViewController(viewModel: viewModel), animated: true)
     }
     
+    func getLoader() -> LoaderViewController {
+        let viewModel = LoaderViewModel(model: .init())
+        
+        viewModel.coordinator = self
+        
+        return .init(viewModel: viewModel)
+    }
+    
 //    MARK: - No Internet
     func goToNoInternet() {
         let viewModel = NoInternetViewModel(model: .init())

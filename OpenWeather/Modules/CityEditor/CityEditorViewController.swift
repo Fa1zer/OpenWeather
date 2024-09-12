@@ -101,7 +101,7 @@ final class CityEditorViewController: UIViewController {
     
     @objc private func didTapNext() {
         self.viewModel.setCity()
-        self.viewModel.goToLoader()
+        NotificationCenter.default.post(name: .init("restart"), object: nil)
     }
     
 }
